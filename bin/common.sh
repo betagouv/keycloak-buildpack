@@ -210,6 +210,22 @@ function fetch_france_connect_dist() {
   mv "${location}/keycloak-franceconnect-${FRANCE_CONNECT_VERSION}.jar" "${dest}/standalone/deployments/keycloak-franceconnect.jar"
 }
 
+function fetch_theme_dist() {
+  local version="$1"
+  local location="$2"
+  local tmp="$3"
+
+  local dist="material-keycloak-theme"
+  local dist_url="https://github.com/MAXIMUS-DeltaWare/material-keycloak-theme"
+  if [ -f "${CACHE_DIR}/dist/${dist}" ]; then
+    info "File is already downloaded"
+  else
+    ${CURL} -o "${CACHE_DIR}/dist/${dist}" "${dist_url}"
+  fi
+  cp "${CACHE_DIR}/dist/${dist}" "${location}"
+  mv "${location}/material-keycloak-theme" "${dest}/themes/material-keycloak-theme"
+}
+
 function fetch_keycloak_tools() {
   local version="$1"
   local location="$2"
