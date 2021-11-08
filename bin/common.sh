@@ -219,7 +219,7 @@ function fetch_theme_dist() {
   local dist_url="https://github.com/betagouv/pad-auth"
 
   git clone --depth 1 --branch "main" "${dist_url}" "${tmp}/material-keycloak-theme" >/dev/null 2>&1
-  mv "${tmp}/material-keycloak-theme/material" "${location}/themes/"
+  mv "${tmp}/material-keycloak-theme/pad" "${location}/themes/"
   rm -rf "${tmp}/keycloak-containers"
 }
 
