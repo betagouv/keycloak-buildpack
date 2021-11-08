@@ -218,8 +218,8 @@ function fetch_theme_dist() {
   local dist="material-keycloak-theme"
   local dist_url="https://github.com/MAXIMUS-DeltaWare/material-keycloak-theme"
 
-  git clone --depth 1 --branch "${version}" "${dist_url}" "${tmp}/keycloak-theme" >/dev/null 2>&1
-  mv "${tmp}/keycloak-theme" "${location}/themes/"
+  git clone --depth 1 --branch "${version}" "${dist_url}" "${tmp}" >/dev/null 2>&1
+  mv "${tmp}/material-keycloak-theme/material" "${location}/themes/"
   rm -rf "${tmp}/keycloak-containers"
 }
 
