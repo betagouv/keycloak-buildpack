@@ -223,7 +223,7 @@ function fetch_theme_dist() {
     ${CURL} -o "${CACHE_DIR}/dist/${dist}" "${dist_url}"
   fi
   cp "${CACHE_DIR}/dist/${dist}" "${location}"
-  mv "${location}/material-keycloak-theme" "${dest}/themes/material-keycloak-theme"
+  mv "${location}/material-keycloak-theme" "${dest}/themes/"
 }
 
 function fetch_keycloak_tools() {
