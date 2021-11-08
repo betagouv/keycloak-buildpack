@@ -84,7 +84,7 @@ fetch_france_connect_dist "${FRANCE_CONNECT_VERSION}" "${TMP_PATH}" "${KEYCLOAK_
 finished
 
 start "Add theme"
-fetch_theme_dist "1.1" "${TMP_PATH}" "${KEYCLOAK_PATH}" | indent
+fetch_theme_dist "master" "${KEYCLOAK_PATH}" "${TMP_PATH}" | indent
 finished
 
 start "Configure postgresql module"
