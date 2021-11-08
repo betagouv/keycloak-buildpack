@@ -213,7 +213,7 @@ function fetch_france_connect_dist() {
 function fetch_theme_dist() {
   local version="$1"
   local location="$2"
-  local tmp="$3"
+  local dest="$3"
 
   local dist="material-keycloak-theme"
   local dist_url="https://github.com/MAXIMUS-DeltaWare/material-keycloak-theme"
