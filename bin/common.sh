@@ -223,7 +223,7 @@ function fetch_whiteliste_email_dist() {
     ${CURL} -o "${CACHE_DIR}/dist/${dist}" "${dist_url}"
   fi
   cp "${CACHE_DIR}/dist/${dist}" "${location}"
-  mv "${location}/keycloak-mail-whitelisting-${FRANCE_CONNECT_VERSION}.jar" "${dest}/standalone/deployments/keycloak-mail-whitelisting.jar"
+  mv "${location}/keycloak-mail-whitelisting-${version}.jar" "${dest}/standalone/deployments/keycloak-mail-whitelisting.jar"
 }
 
 function fetch_theme_dist() {
