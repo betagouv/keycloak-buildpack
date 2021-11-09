@@ -210,6 +210,22 @@ function fetch_france_connect_dist() {
   mv "${location}/keycloak-franceconnect-${FRANCE_CONNECT_VERSION}.jar" "${dest}/standalone/deployments/keycloak-franceconnect.jar"
 }
 
+function fetch_whiteliste_email_dist() {
+  local version="$1"
+  local location="$2"
+  local dest="$3"
+
+  local dist="keycloak-mail-whitelisting-${version}.jar"
+  local dist_url="https://github.com/micedre/keycloak-mail-whitelisting/releases/download/${version}/${dist}"
+  if [ -f "${CACHE_DIR}/dist/${dist}" ]; then
+    info "File is already downloaded"
+  else
+    ${CURL} -o "${CACHE_DIR}/dist/${dist}" "${dist_url}"
+  fi
+  cp "${CACHE_DIR}/dist/${dist}" "${location}"
+  mv "${location}/keycloak-mail-whitelisting-${FRANCE_CONNECT_VERSION}.jar" "${dest}/standalone/deployments/keycloak-mail-whitelisting.jar"
+}
+
 function fetch_theme_dist() {
   local version="$1"
   local location="$2"
