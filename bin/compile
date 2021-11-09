@@ -83,6 +83,10 @@ start "Add plugin france connect ${FRANCE_CONNECT_VERSION}"
 fetch_france_connect_dist "${FRANCE_CONNECT_VERSION}" "${TMP_PATH}" "${KEYCLOAK_PATH}" | indent
 finished
 
+start "Add keycloak whitelist"
+fetch_whiteliste_email_dist "1.3.3" "${TMP_PATH}" "${KEYCLOAK_PATH}" | indent
+finished
+
 start "Add theme"
 fetch_theme_dist "master" "${KEYCLOAK_PATH}" "${TMP_PATH}" | indent
 finished
