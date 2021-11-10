@@ -216,7 +216,7 @@ function fetch_whiteliste_email_dist() {
   local dest="$3"
 
   local dist="keycloak-mail-whitelisting-${version}.jar"
-  local dist_url="https://github.com/micedre/keycloak-mail-whitelisting/releases/download/${version}/${dist}"
+  local dist_url="https://repo1.maven.org/maven2/net/micedre/keycloak/keycloak-mail-whitelisting/${version}/${dist}"
   if [ -f "${CACHE_DIR}/dist/${dist}" ]; then
     info "File is already downloaded"
   else
