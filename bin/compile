@@ -87,9 +87,11 @@ start "Add keycloak whitelist"
 fetch_whiteliste_email_dist "1.3.3" "${TMP_PATH}" "${KEYCLOAK_PATH}" | indent
 finished
 
-start "Add theme"
-fetch_theme_dist "master" "${KEYCLOAK_PATH}" "${TMP_PATH}" | indent
-finished
+if [ ! -d "${THEME_PATH}" ]; then
+  start "Add theme"
+  fetch_theme_dist "${THEME_NAME}" "${THEME_PATH}" "${TMP_PATH}" | indent
+  finished
+fi
 
 start "Configure postgresql module"
 if [[ -f "${ENV_DIR}/JDBC_POSTGRES_VERSION" ]]; then
