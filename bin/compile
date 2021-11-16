@@ -89,7 +89,7 @@ finished
 
 if [ ! -d "${THEME_PATH}" ]; then
   start "Add theme"
-  fetch_theme_dist "${THEME_NAME}" "${THEME_PATH}" "${TMP_PATH}" | indent
+  fetch_theme_dist "${THEME_NAME}" "${THEME_PATH}" "${KEYCLOAK_PATH}" "${TMP_PATH}" | indent
   finished
 fi
 
