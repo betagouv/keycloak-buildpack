@@ -232,7 +232,7 @@ function fetch_theme_dist() {
   local tmp="$3"
 
   git clone --depth 1 --branch "main" "${location}" "${tmp}/keycloak-theme" >/dev/null 2>&1
-  mv "${tmp}/keycloak-theme/${name}" "${location}/themes/"
+  mv "${tmp}/keycloak-theme/${name}/theme" "${location}/themes/"
   rm -rf "${tmp}/keycloak-theme"
 }
 
