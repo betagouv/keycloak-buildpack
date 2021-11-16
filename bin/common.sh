@@ -227,16 +227,13 @@ function fetch_whiteliste_email_dist() {
 }
 
 function fetch_theme_dist() {
-  local version="$1"
+  local name="$1"
   local location="$2"
   local tmp="$3"
 
-  local dist="material-keycloak-theme"
-  local dist_url="https://github.com/betagouv/pad-auth"
-
-  git clone --depth 1 --branch "main" "${dist_url}" "${tmp}/material-keycloak-theme" >/dev/null 2>&1
-  mv "${tmp}/material-keycloak-theme/pad" "${location}/themes/"
-  rm -rf "${tmp}/keycloak-containers"
+  git clone --depth 1 --branch "main" "${location}" "${tmp}/keycloak-theme" >/dev/null 2>&1
+  mv "${tmp}/keycloak-theme/${name}" "${location}/themes/"
+  rm -rf "${tmp}/keycloak-theme"
 }
 
 function fetch_keycloak_tools() {
