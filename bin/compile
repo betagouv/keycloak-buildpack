@@ -93,7 +93,7 @@ if [[ -v THEME_PATH ]]; then
   finished
 fi
 
-THEME_FILE="$BUILD_DIR/themes.txt"
+THEME_FILE="${BUILD_DIR}/themes.txt"
 if test -f "$THEMES_FILE"; then
     while IFS= read -r line
       do
