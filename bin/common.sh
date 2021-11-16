@@ -228,10 +228,11 @@ function fetch_whiteliste_email_dist() {
 
 function fetch_theme_dist() {
   local name="$1"
-  local location="$2"
-  local tmp="$3"
+  local theme_path="$2"
+  local location="$3"
+  local tmp="$4"
 
-  git clone --depth 1 --branch "main" "${location}" "${tmp}/keycloak-theme" >/dev/null 2>&1
+  git clone --depth 1 --branch "main" "${theme_path}" "${tmp}/keycloak-theme" >/dev/null 2>&1
   mv "${tmp}/keycloak-theme/${name}/theme" "${location}/themes/"
   rm -rf "${tmp}/keycloak-theme"
 }
