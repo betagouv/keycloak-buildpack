@@ -93,6 +93,20 @@ if [[ -v THEME_PATH ]]; then
   finished
 fi
 
+THEME_FILE=themes.txt
+if test -f "$THEMES_FILE"; then
+    while IFS= read -r line
+      do
+        IFS=','
+        #Read the split words into an array based on comma delimiter
+        read -a strarr <<< "$line"
+        echo "${strarr[0]} ${strarr[1]}"
+        start "Add theme ${strarr[0]}"
+        fetch_theme_dist "${strarr[0]}" "${strarr[1]}" "${KEYCLOAK_PATH}" "${TMP_PATH}" | indent
+        finished
+      done < "$THEMES_FILE"
+fi
+
 start "Configure postgresql module"
 if [[ -f "${ENV_DIR}/JDBC_POSTGRES_VERSION" ]]; then
   JDBC_POSTGRES_VERSION=$(cat "${ENV_DIR}/JDBC_POSTGRES_VERSION")
