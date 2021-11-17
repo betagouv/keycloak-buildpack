@@ -87,12 +87,6 @@ start "Add keycloak whitelist"
 fetch_whiteliste_email_dist "1.3.3" "${TMP_PATH}" "${KEYCLOAK_PATH}" | indent
 finished
 
-if [[ -v THEME_PATH ]]; then
-  start "Add theme"
-  fetch_theme_dist "${THEME_NAME}" "${THEME_PATH}" "${KEYCLOAK_PATH}" "${TMP_PATH}" | indent
-  finished
-fi
-
 THEMES_FILE="${BUILD_DIR}/themes.txt"
 if test -f "$THEMES_FILE"; then
     while IFS= read -r line
