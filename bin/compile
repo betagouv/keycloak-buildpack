@@ -97,7 +97,7 @@ THEMES_FILE="${BUILD_DIR}/themes.txt"
 if test -f "$THEMES_FILE"; then
     while IFS= read -r line
       do
-        IFS=','
+        IFS=' '
         #Read the split words into an array based on comma delimiter
         read -a strarr <<< "$line"
         echo "${strarr[0]} ${strarr[1]}"
