@@ -58,6 +58,14 @@ You can do the same with import. See [Export/import docs](https://www.keycloak.o
 
 With [scalingo CLI](https://doc.scalingo.com/platform/app/tasks#upload-an-archive-and-extract-it-on-the-server) you can download or upload these files.
 
+### Add a theme
+Add a file themes.txt at the root of your project with the name and links to the theme project.
+The theme must be in a projet in theme folder.
+
+```shell
+pad https://github.com/betagouv/keycloak-dsfr-theme
+```
+
 ## Hacking
 
 Run an interactive docker scalingo stack:
